@@ -8,7 +8,7 @@ obj=Flask(__name__)
 def welcome():
     return "Welcome to flask"
 
-@obj.route('cal',methods=["GET"])
+@obj.route('/cal',methods=["GET"])
 def math_operator():
     Operation=request.json["operation"]
     number1=request.json["number1"]
@@ -20,7 +20,7 @@ elif operation=="multiply":
      result=number1*number2   
 elif operation=="division":
      result=number1/number2
-else
+else:
      result=number1-number2
 return result
 
@@ -28,6 +28,5 @@ return result
 
 print(__name__)
 
-if__name__ == '__main__':
-    obj.run()
-
+if __name__ == '__main__':
+     obj.run()
